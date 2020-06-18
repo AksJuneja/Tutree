@@ -1,0 +1,128 @@
+Ques1
+  def timing(function):
+    def wrapper(*args, **kwargs):
+        beg= time.time()
+        x = function(*args, **kwargs)
+       end = time.time()
+       print("time = ", end-beg)
+       return x
+    return wrapper
+    
+Ques 2
+    def pal(str1):
+      str1 = str1.casefold()
+      str2 = reversed(str1)
+      if list(str1) == list(str2):
+        print("is palindrome")
+      else:
+        print("not palindrome")
+
+pal("noon")
+
+Ques3
+from collections import Counter 
+def remove_duplicates(st): 
+   st = st.split(" ")       
+   for i in range(0, len(st)): 
+      st[i] = "".join(st[i]) 
+   dupli = Counter(st) 
+   s = " ".join(dupli.keys()) 
+   print (s) 
+
+st = input()
+remove_duplicates(st) 
+
+Ques4
+  def SortString(s, n): 
+    l1=[] 
+    l2=[] 
+    for i in range(n): 
+        if (s[i] >= 'a' and s[i] <= 'z'): 
+            l1.append(s[i]) 
+        if (s[i] >= 'A' and s[i] <= 'Z'): 
+            l2.append(s[i]) 
+  
+    l1=sorted(l1) 
+    l2=sorted(l2) 
+    i = 0
+    j = 0
+    for k in range(n): 
+        if (s[k] >= 'a' and s[k] <= 'z'): 
+            s[k] = l1[i] 
+            i+=1
+        elif (s[k] >= 'A' and s[k] <= 'Z'): 
+            s[k] = l2[j] 
+            j+=1
+    return "".join(s)
+s=input()
+scomp=[i for i in s] 
+n = len(scomp) 
+  
+print(SortString(scomp, n)) 
+
+Ques5
+def func(s):
+    res=[]
+    for i in s:
+        if i in "aeiouAEIOU":
+            res.extend(i) 
+    res = "".join(res)
+    return res
+
+s=input()
+print(func(s))
+
+Ques7
+  answer = []
+for (i in range(L.count-4))
+    max = -1000
+    for(j in range(K)
+        if(L[i] > max)
+            max = L[i]
+        i++
+     answer.append(max)
+return answer
+
+Ques8
+def calculateMaxSumLength(arr, n, k): 
+    ans = 0 
+    for i in range(n): 
+        
+        count = 0
+        flag = 0
+        
+        while i < n and arr[i] <= k : 
+            count = count + 1
+            if arr[i] == k: 
+                flag = 1
+            i = i + 1
+              
+       
+        if flag == 1: 
+            ans = ans + count 
+    
+        while i < n and arr[i] > k : 
+            i = i + 1 
+               
+    return ans 
+      
+arr = [4, 5, 7, 1, 2, 9, 8, 4, 3, 1] 
+size = len(arr) 
+k = 4
+ans = calculateMaxSumLength(arr, size, k) 
+print (ans) 
+
+Ques9
+numWords = 0
+numLines = 0
+
+file = open("filename.txt", "r")
+def func(file):
+  for i in file:
+      numLines++
+      for j in i:
+        words = i.split(" ")
+        numWords += words.count()
+  answer = [numWords, numLines]
+return answer
+print(func(file))
